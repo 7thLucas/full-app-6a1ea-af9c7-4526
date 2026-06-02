@@ -14,33 +14,48 @@ export type TBrandColor = {
 
 export type TDefaultConfigurableData = {
   appName: string;
+  appTagline?: string;
+  appDescription?: string;
   logoUrl: string;
+  faviconUrl?: string;
   brandColor: TBrandColor;
-  // Mirror new schema fields here. Example:
-  //   maxItemsPerPage?: number;
-  //   enableNotifications?: boolean;
-  //   featuredCategories?: string[];
+  dashboardWelcomeTitle?: string;
+  dashboardWelcomeSubtitle?: string;
+  loginHeading?: string;
+  loginSubheading?: string;
+  registerHeading?: string;
+  registerSubheading?: string;
+  enableGuestManagement?: boolean;
+  enableVenueManagement?: boolean;
+  enableVendorTracking?: boolean;
+  enableTimelineManagement?: boolean;
+  defaultEventsPerPage?: number;
+  footerText?: string;
+  supportEmail?: string;
 };
 
 export const defaultConfigurablesData: TDefaultConfigurableData = {
-  appName: "FILL_APP_NAME_HERE",
+  appName: "EventFlow",
+  appTagline: "Deliver flawless events without the chaos",
+  appDescription: "An all-in-one dashboard for event planners to manage venues, vendors, guest lists, and timelines.",
   logoUrl: "FILL_LOGO_URL_HERE",
+  faviconUrl: "", // fill it here once uploaded
   brandColor: {
-    primary: "FILL_PRIMARY_COLOR_HERE",
-    secondary: "FILL_SECONDARY_COLOR_HERE",
-    accent: "FILL_ACCENT_COLOR_HERE",
+    primary: "#1B4332",
+    secondary: "#52B788",
+    accent: "#74C69D",
   },
-  // ─────────────────────────────────────────────────────────────────────
-  // Add new field defaults here. See RULES.md §5 for per-type shape.
-  // Required branding fields → use the FILL_X_HERE placeholder pattern.
-  // Optional/typed defaults → real value with a "// fill it here" comment:
-  //
-  //   maxItemsPerPage: 12,                     // fill it here
-  //   enableNotifications: true,               // fill it here
-  //   featuredCategories: [],                  // fill it here
-  //   defaultLanguage: "en",                   // must match enum options
-  //   launchDate: "2025-01-01T00:00:00.000Z",  // ISO-8601
-  //   heroImage: "",                           // resolved URL after upload
-  //   galleryImages: [],                       // array of resolved URLs
-  // ─────────────────────────────────────────────────────────────────────
+  dashboardWelcomeTitle: "Welcome back",
+  dashboardWelcomeSubtitle: "Here's what's happening with your events today.",
+  loginHeading: "Sign in to EventFlow",
+  loginSubheading: "Enter your credentials to access your planner dashboard",
+  registerHeading: "Create your account",
+  registerSubheading: "Start managing your events with EventFlow",
+  enableGuestManagement: true,
+  enableVenueManagement: true,
+  enableVendorTracking: true,
+  enableTimelineManagement: true,
+  defaultEventsPerPage: 20, // fill it here
+  footerText: "© 2026 EventFlow. All rights reserved.",
+  supportEmail: "", // fill it here
 };

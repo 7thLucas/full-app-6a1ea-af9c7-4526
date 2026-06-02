@@ -3,6 +3,7 @@ import { readdir } from "node:fs/promises";
 import { pathToFileURL } from "node:url";
 import { Router } from "express";
 import { createLogger } from "~/lib/logger";
+import eventflowRoutes from "~/eventflow/routes/eventflow.routes";
 
 type RouteModule = {
   default?: ReturnType<typeof Router>;
@@ -61,5 +62,8 @@ async function registerModuleRoutes(): Promise<void> {
 }
 
 await registerModuleRoutes();
+
+// Register EventFlow feature routes
+router.use("/eventflow", eventflowRoutes);
 
 export default router;
